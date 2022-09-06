@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Calcular area del triangulo</h2>
+
+<form action="/" method="POST">
+  <label for="base">Base:</label><br>
+  <input type="text" id="base" name="base"><br>
+  <label for="altura">Altura:</label><br>
+  <input type="text" id="height" name="height"><br><br>
+  <input type="submit" value="Calcular">
+</form> 
+{% block content %}
+<p>Area del triangulo: {{ area }} </p>
+{% endblock %}
+</body>
+</html>
