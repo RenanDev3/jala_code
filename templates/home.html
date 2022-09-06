@@ -1,18 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+   <title>Calculadora</title>
+   <style>
+      * {
+         padding: 0;
+         margin: 0;
+      }
+      header {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         padding: 20px;
+         background-color: cornflowerblue;
+         color: white;
+      }
+
+      section {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         height: 80vh;
+      }
+      div {
+         display: flex;
+         flex-direction: column;
+         margin-bottom: 30px;
+      }
+      form input {
+         outline: unset;
+         padding: 20px;
+         width: 100px;
+         border: 1px solid black;
+         border-radius: 10px;
+      }
+
+      form input:focus {
+         background-color: wheat;
+      }
+
+      form input[type=submit] {
+         background-color: cornflowerblue;
+         width: 140px;
+         color: white;
+         cursor: pointer;
+      }
+
+      form label {
+         margin-left: 10px;
+      }
+
+      #area {
+         background-color: cornflowerblue;
+         color: white;
+         border-radius: 10px;
+         font-size: medium;
+         padding: 2px;
+         align-items: center;
+         border: 1px solid black;
+      }
+   </style>
+</head>
 <body>
-
+<header>
 <h2>Calcular area del triangulo</h2>
-
+</header>
+<section>
 <form action="/" method="POST">
-  <label for="base">Base:</label><br>
-  <input type="text" id="base" name="base"><br>
-  <label for="altura">Altura:</label><br>
-  <input type="text" id="height" name="height"><br><br>
-  <input type="submit" value="Calcular">
-</form> 
-{% block content %}
-<p>Area del triangulo: {{ area }} </p>
-{% endblock %}
+   <div>
+      <label for="base">Base:</label><br>
+      <input type="number" id="base" name="base" min="0.00" step="0.1" required><br>
+   </div>
+   <div>
+      <label for="altura">Altura:</label><br>
+      <input type="number" id="height" name="height" min="0.00" step="0.1" required><br><br>
+   </div>
+   <div>
+      <input type="submit" value="Calcular">
+   </div>
+   <div id="area"> 
+      {% block content %}
+      <p>Area del triangulo: {{ area }} </p>
+      {% endblock %}
+   </div>
+</form>
+
+</section>
 </body>
 </html>

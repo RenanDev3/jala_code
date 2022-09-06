@@ -8,6 +8,6 @@ def calc():
     if request.method == "POST":
        base = request.form.get("base",10)
        height = request.form.get("height", 10)
-       area = (int(base)*int(height))/2
+       area = (float(base)*float(height))/2
 
     return render_template("home.html", area=area)
